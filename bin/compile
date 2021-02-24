@@ -132,7 +132,7 @@ fi
 cp -R $PUB_CACHE $APP_DIR
 
 if [ -n "$FLUTTER_DEPLOY_DIR" ]; then
-  cp "$APP_DIR" "$FLUTTER_DEPLOY_DIR"
+  cp -r "$APP_DIR" "$FLUTTER_DEPLOY_DIR"
 fi
 
 export PATH="$PATH":"/app/dart-sdk/bin/"
