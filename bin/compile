@@ -32,7 +32,11 @@ export_env_dir "$3"
 
 # Create the cache directory if not exist.
 mkdir -p $CACHE_DIR
-APP_DIR=$BUILD_DIR/$FLUTTER_BUILD_DIR
+if [ -n "$FLUTTER_BUILD_DIR" ]; then
+  APP_DIR=$BUILD_DIR/$FLUTTER_BUILD_DIR
+else
+  APP_DIR=$BUILD_DIR
+fi
 cd "$APP_DIR"
 
 if [ -d "$CACHE_DIR/flutter" ]; then
@@ -92,7 +96,7 @@ if [ -x flutter/bin/flutter ]; then
   print "Saving Flutter SDK in Cache"
   rm -rf $CACHE_DIR/flutter
   cp -R $APP_DIR/flutter $CACHE_DIR/flutter
-  mv $APP_DIR/flutter/bin/cache/dart-sdk/ $APP_DIR
+#  mv $APP_DIR/flutter/bin/cache/dart-sdk/ $APP_DIR
   rm -rf $APP_DIR/flutter
 fi
 
