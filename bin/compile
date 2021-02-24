@@ -40,8 +40,10 @@ mkdir -p $CACHE_DIR
 
 cd $BUILD_DIR
 
-echo "-----> PWD:"
-echo "$BUILD_DIR"
+echo "TEST"
+echo "ls $(ls)"
+echo "build dir $BUILD_DIR"
+echo "flutter build dir $FLUTTER_BUILD_DIR"
 
 if [ -d "$CACHE_DIR/flutter" ]; then
   print "Restoring Flutter SDK from CACHE"
