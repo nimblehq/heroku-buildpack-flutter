@@ -25,7 +25,7 @@ function export_env_dir() {
 function indent() {
   sed -u 's/^/       /'
 }
-BUILD_DIR="frontend/flutter_desktop_test"
+BUILD_DIR="bin/ump_legal_counsel/frontend/flutter_desktop_test"
 CACHE_DIR=${2:-}
 
 export_env_dir "$3"
