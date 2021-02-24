@@ -1,11 +1,23 @@
 #!/bin/sh
 
-BUILD_DIR=${1:-}
+if [ -n "$FLUTTER_BUILD_DIR" ]; then
+  BUILD_DIR="$FLUTTER_BUILD_DIR"
+else
+  BUILD_DIR=${1:-}
+fi
+
+if [ -n "$FLUTTER_DEPLOY_DIR" ]; then
+  FLUTTER_DEPLOY_DIR_BASE="$FLUTTER_DEPLOY_DIR"
+else
+  FLUTTER_DEPLOY_DIR_BASE="/app"
+fi
+
+
 # If the FLUTTER_CLEANUP is in false, or in true.
 if [ -d $BUILD_DIR/build/web ]; then
-    DEPLOY_DIR="/app/build/web/"
+    DEPLOY_DIR="$FLUTTER_DEPLOY_DIR_BASE/build/web/"
 else
-    DEPLOY_DIR="/app/"
+    DEPLOY_DIR="$FLUTTER_DEPLOY_DIR_BASE/"
 fi
 
 cat <<EOF
