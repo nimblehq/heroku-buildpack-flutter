@@ -25,7 +25,7 @@ function export_env_dir() {
 function indent() {
   sed -u 's/^/       /'
 }
-BUILD_DIR="$FLUTTER_BUILD_DIR"
+BUILD_DIR="frontend/flutter_desktop_test"
 CACHE_DIR=${2:-}
 
 export_env_dir "$3"
@@ -36,7 +36,6 @@ mkdir -p $CACHE_DIR
 cd $BUILD_DIR
 
 echo "TEST"
-echo "flutter build dir $FLUTTER_BUILD_DIR"
 
 if [ -d "$CACHE_DIR/flutter" ]; then
   print "Restoring Flutter SDK from CACHE"
