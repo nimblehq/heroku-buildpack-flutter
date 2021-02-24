@@ -25,13 +25,7 @@ function export_env_dir() {
 function indent() {
   sed -u 's/^/       /'
 }
-if [ -n "$FLUTTER_BUILD_DIR" ]; then
-  BUILD_DIR="$FLUTTER_BUILD_DIR"
-  echo "asdfasdfasdf"
-else
-  BUILD_DIR=${1:-}
-fi
-
+BUILD_DIR="$FLUTTER_BUILD_DIR"
 CACHE_DIR=${2:-}
 
 export_env_dir "$3"
@@ -42,8 +36,6 @@ mkdir -p $CACHE_DIR
 cd $BUILD_DIR
 
 echo "TEST"
-echo "ls $(ls)"
-echo "build dir $BUILD_DIR"
 echo "flutter build dir $FLUTTER_BUILD_DIR"
 
 if [ -d "$CACHE_DIR/flutter" ]; then
