@@ -27,6 +27,7 @@ function indent() {
 }
 if [ -n "$FLUTTER_BUILD_DIR" ]; then
   BUILD_DIR="$FLUTTER_BUILD_DIR"
+  echo "asdfasdfasdf"
 else
   BUILD_DIR=${1:-}
 fi
