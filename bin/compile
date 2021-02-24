@@ -96,7 +96,7 @@ if [ -x flutter/bin/flutter ]; then
   print "Saving Flutter SDK in Cache"
   rm -rf $CACHE_DIR/flutter
   cp -R $APP_DIR/flutter $CACHE_DIR/flutter
-#  mv $APP_DIR/flutter/bin/cache/dart-sdk/ $APP_DIR
+  mv $APP_DIR/flutter/bin/cache/dart-sdk/ $APP_DIR
   rm -rf $APP_DIR/flutter
 fi
 
