@@ -32,6 +32,7 @@ export_env_dir "$3"
 
 # Create the cache directory if not exist.
 mkdir -p $CACHE_DIR
+ls
 
 cd $BUILD_DIR
 
