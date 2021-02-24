@@ -33,7 +33,7 @@ export_env_dir "$3"
 # Create the cache directory if not exist.
 mkdir -p $CACHE_DIR
 
-cd $BUILD_DIR
+cd $BUILD_DIR/$FLUTTER_BUILD_DIR
 ls -la
 
 if [ -d "$CACHE_DIR/flutter" ]; then
