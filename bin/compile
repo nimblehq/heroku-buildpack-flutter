@@ -139,7 +139,7 @@ if [ -n "$FLUTTER_DEPLOY_DIR" ]; then
   cp -r "$APP_DIR" "$BUILD_DIR/$FLUTTER_DEPLOY_DIR"
 fi
 
-du -hsc "$(pwd)"
+du -h -d 2 | sort -n
 
 export PATH="$PATH":"/app/dart-sdk/bin/"
 export PATH="$PATH":"/app/.pub-cache/bin"
