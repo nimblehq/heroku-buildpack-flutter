@@ -141,5 +141,5 @@ fi
 
 du -h -d 2 | sort -n
 
-export PATH="$PATH":"/app/dart-sdk/bin/"
-export PATH="$PATH":"/app/.pub-cache/bin"
+export PATH="$PATH":"/$APP_DIR/dart-sdk/bin/"
+export PATH="$PATH":"/$APP_DIR/.pub-cache/bin"
